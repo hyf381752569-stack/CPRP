@@ -198,9 +198,8 @@ results/ViCoS/
 CPRP/
 │
 ├── models/
-│   └── pretrained/
-│       ├── CPRP_ARF_2B.pth
-│       └── CPRP_VICOS_2B.pth
+│   ├── ARF_2B.pth
+│   └── VICOS_2B.pth
 │
 ├── DGForAug/   # GenerativeAug pipeline
 │   ├── foraug_preprocess_batch.sh
