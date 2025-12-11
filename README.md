@@ -15,11 +15,11 @@ We extend the original aRTF Clothes Dataset with ViCoS-style keypoint annotation
 
 Download link (replace with your own):
 🔗 **aRTF-K Dataset**  
-```
+
 
 [Google Drive](https://drive.google.com/file/d/1q1Z_lGAwAHK0vbdZiFJeZbp4tIMkbB7F/view?usp=drive_link)
 
-```
+
 
 Unzip and place it under:
 ```
