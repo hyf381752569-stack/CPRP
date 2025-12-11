@@ -68,8 +68,8 @@ Make sure the final structure is:
 ```
 
 models/
-CPRP_ARF_2B.pth
-CPRP_VICOS_2B.pth
+ARF_2B.pth
+VICOS_2B.pth
 
 ````
 
@@ -104,7 +104,7 @@ To generate new training data:
 
 ## ▶ Step 1 — Foreground–background separation
 
-(Using SAM + Attentive Eraser)
+(Using Attentive Eraser)
 
 ```bash
 bash DGForAug/foraug_preprocess_batch.sh
@@ -112,7 +112,6 @@ bash DGForAug/foraug_preprocess_batch.sh
 
 This script performs:
 
-* SAM-based cloth mask extraction
 * Attentive Eraser clean background reconstruction
 * File organization into `fg/`, `bg/`, `mask/` folders
 
