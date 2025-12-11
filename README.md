@@ -52,7 +52,7 @@ models/ARF_2B.pth
 
 ```
 Download:  
-🔗 https://drive.google.com/xxxxx  
+🔗 https://drive.google.com/file/d/1GHy-alsSHlCWydtV1eClVEsyMYXiJiUT/view?usp=drive_link
 
 
 ### 🔹 VICOS-2B Model (trained on ViCoS)
