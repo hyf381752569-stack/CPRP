@@ -77,16 +77,11 @@ VICOS_2B.pth
 
 ## ⚙️ Environment Setup
 
-```bash
-conda create -n CPRP python=3.8
-conda activate CPRP
-
-pip install -r requirements.txt
+```
+conda env create -f environment.yml
+conda activate CPRP   
 ````
 
-(If using the exact environment as CeDiRNet-3DoF, no further changes needed.)
-
----
 
 
 # 🌈 Data Generation (GenerativeAug)
