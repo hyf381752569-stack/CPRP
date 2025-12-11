@@ -48,7 +48,7 @@ We provide two pretrained GMM-based probabilistic CPRP models:
 ### 🔹 ARF-2B Model (trained on aRTF-K)
 ```
 
-models/CPRP_ARF_2B.pth
+models/ARF_2B.pth
 
 ```
 Download:  
@@ -58,7 +58,7 @@ Download:
 ### 🔹 VICOS-2B Model (trained on ViCoS)
 ```
 
-models/CPRP_VICOS_2B.pth
+models/VICOS_2B.pth
 
 ```
 Download:  
