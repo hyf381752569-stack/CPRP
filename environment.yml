@@ -1,4 +1,4 @@
-name: CeDiRNet-py3.8
+name: CPRP
 channels:
   - defaults
 dependencies:
