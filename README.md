@@ -1,58 +1,136 @@
-# CPRP
+# CPRP: Comprehensive Perception & Rational Prediction
 
-This repository contains the official implementation of the method proposed in the paper:
+This repository contains the official implementation of **CPRP**, a deformable-object keypoint localization framework integrating:
 
-**Comprehensive Perception, Rational Prediction: Achieving More Robust Deformable Object Keypoint Localization Using Generative Data Augmentation and Probabilistic Prediction Models**
+- **GenerativeAug** (diffusion-based data augmentation)
+- **ProbPredictor** (Gaussian Mixture Model based probabilistic prediction)
+- Fully compatible with the CeDiRNet-3DoF baseline.
 
-The code is provided for research and review purposes.
+---
+
+## 📁 Dataset Preparation
+
+### 1. aRTF-K Dataset (Annotated Clothes Dataset)
+We extend the original aRTF Clothes Dataset with ViCoS-style keypoint annotations.
+
+Download link (replace with your own):
+🔗 **aRTF-K Dataset**  
+```
+
+[Google Drive] [https://drive.google.com/xxxxxx](https://drive.google.com/xxxxxx)
+
+```
+
+Unzip and place it under:
+```
+
+datasets/aRTF-K/
+
+```
+
+### 2. ViCoS Towel Dataset
+Official dataset link:  
+https://vicos.si/resources/towel-dataset/
+
+Place as:
+```
+
+datasets/ViCoS/
+
+```
+
+---
+
+## 🧩 Pretrained Weights
+
+We provide two pretrained GMM-based probabilistic CPRP models:
+
+### 🔹 ARF-2B Model (trained on aRTF-K)
+```
+
+models/CPRP_ARF_2B.pth
+
+```
+Download:  
+🔗 https://drive.google.com/xxxxx  
 
 
-### Dependency
+### 🔹 VICOS-2B Model (trained on ViCoS)
+```
 
-* Python >= 3.8
-* PyTorch >= 1.9
-* `segmentation_models_pytorch`
-* `timm`
-* `opencv-python`
-* `numpy`, `scipy`, `scikit_image`, `scikit_learn`
+models/CPRP_VICOS_2B.pth
 
-Please refer to `requirements.txt` for the complete list of dependencies.
+```
+Download:  
+🔗 https://drive.google.com/xxxxx  
 
-### Recommended Installation with Conda
+Make sure the final structure is:
+```
+
+models/
+CPRP_ARF_2B.pth
+CPRP_VICOS_2B.pth
+
+````
+
+---
+
+## ⚙️ Environment Setup
 
 ```bash
-conda create -n=CPRP-py3.8 python=3.8
-conda activate CPRP-py3.8
-
-# install PyTorch according to your CUDA version (example for CUDA 11.7)
-pip install torch==2.0.0+cu117 torchvision==0.15.1+cu117  \
-     -f https://download.pytorch.org/whl/torch_stable.html
+conda create -n CPRP python=3.8
+conda activate CPRP
 
 pip install -r requirements.txt
+````
+
+(If using the exact environment as CeDiRNet-3DoF, no further changes needed.)
+
+---
+
+## 🚀 Running Experiments
+
+We provide reproducible scripts for both datasets.
+
+---
+
+### ▶ Run experiments on **aRTF-K Dataset**
+
+```bash
+bash scripts/EXPERIMENTS_ARF.sh
+```
+
+This script will:
+
+* Train CPRP with GenerativeAug
+* Train ProbPredictor with k=2 Gaussian mixture
+* Evaluate on the unseen-background test set
+
+Logs and results will be saved in:
+
+```
+results/aRTF-K/
 ```
 
 ---
 
-##  Pre-trained Models
+### ▶ Run experiments on **ViCoS Dataset**
 
-For convenience, we provide pre-trained model weights for CPRP.
-
-Please download the checkpoint from the following link and place it into the `models/` directory:
-
-🔗 **Pre-trained model (Google Drive):**
-
-```
-https://drive.google.com/file/d/191FUTuleq9indHuw43spSvxbK1gc5cih/view?usp=drive_link
+```bash
+bash scripts/EXPERIMENTS_VICOS.sh
 ```
 
-After downloading, organize your directory as follows:
+This script will:
+
+* Train on ViCoS training split
+* Test on the official ViCoS unseen backgrounds & towel types
+* Generate visual comparisons and F1 reports
+
+Outputs in:
 
 ```
-models/
- └─ ARF-2B.pth
+results/ViCoS/
 ```
 
 ---
-
-
 
