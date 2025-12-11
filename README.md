@@ -17,7 +17,7 @@ Download link (replace with your own):
 🔗 **aRTF-K Dataset**  
 ```
 
-[Google Drive] [https://drive.google.com/xxxxxx](https://drive.google.com/xxxxxx)
+[Google Drive](https://drive.google.com/file/d/1q1Z_lGAwAHK0vbdZiFJeZbp4tIMkbB7F/view?usp=drive_link)
 
 ```
 
@@ -52,7 +52,7 @@ models/ARF_2B.pth
 
 ```
 Download:  
-🔗 https://drive.google.com/file/d/1GHy-alsSHlCWydtV1eClVEsyMYXiJiUT/view?usp=drive_link
+🔗 (https://drive.google.com/file/d/1GHy-alsSHlCWydtV1eClVEsyMYXiJiUT/view?usp=drive_link)
 
 
 ### 🔹 VICOS-2B Model (trained on ViCoS)
