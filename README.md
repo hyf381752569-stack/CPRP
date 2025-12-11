@@ -88,6 +88,66 @@ pip install -r requirements.txt
 
 ---
 
+
+# 🌈 Data Generation (GenerativeAug)
+
+CPRP integrates a powerful **GenerativeAug** pipeline, which performs:
+
+1. Foreground–background separation
+2. Seamless background inpainting
+3. Stable Diffusion background replacement
+4. Lossless foreground compositing
+
+To generate new training data:
+
+---
+
+## ▶ Step 1 — Foreground–background separation
+
+(Using SAM + Attentive Eraser)
+
+```bash
+bash DGForAug/foraug_preprocess_batch.sh
+```
+
+This script performs:
+
+* SAM-based cloth mask extraction
+* Attentive Eraser clean background reconstruction
+* File organization into `fg/`, `bg/`, `mask/` folders
+
+Outputs will be stored in:
+
+```
+DGForAug/output_preprocess/
+```
+
+---
+
+## ▶ Step 2 — Background generation with Stable Diffusion
+
+```bash
+bash DGForAug/userrealbg.sh
+```
+
+This script performs:
+
+* Random prompt generation
+* ControlNet-based structural conditioning
+* Full-mask global inpainting
+* Multi-style background synthesis
+
+Generated training data will appear in:
+
+```
+DGForAug/output_synthesis/
+```
+
+---
+
+
+
+
 ## 🚀 Running Experiments
 
 We provide reproducible scripts for both datasets.
@@ -133,4 +193,28 @@ results/ViCoS/
 ```
 
 ---
+# 📊 Project Structure
 
+```
+CPRP/
+│
+├── models/
+│   └── pretrained/
+│       ├── CPRP_ARF_2B.pth
+│       └── CPRP_VICOS_2B.pth
+│
+├── DGForAug/   # GenerativeAug pipeline
+│   ├── foraug_preprocess_batch.sh
+│   ├── userrealbg.sh
+│   └── ...
+│
+├── scripts/
+│   ├── EXPERIMENTS_ARF.sh
+│   └── EXPERIMENTS_VICOS.sh
+│
+└── datasets/
+    ├── aRTF-K/
+    └── ViCoS/
+```
+
+---
