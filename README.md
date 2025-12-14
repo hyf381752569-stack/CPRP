@@ -62,7 +62,7 @@ models/VICOS_2B.pth
 
 ```
 Download:  
-🔗 https://drive.google.com/xxxxx  
+🔗 (https://drive.google.com/file/d/1_bzicdKTJ60834rg8C8dYN5vPDkfGqAi/view?usp=drive_link)
 
 Make sure the final structure is:
 ```
