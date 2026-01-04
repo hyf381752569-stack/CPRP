@@ -13,7 +13,7 @@ This repository contains the official implementation of **CPRP**, a deformable-o
 ### 1. aRTF-K Dataset (Annotated Clothes Dataset)
 We extend the original aRTF Clothes Dataset with ViCoS-style keypoint annotations.
 
-Download link (replace with your own):
+Download link:
 🔗 **aRTF-K Dataset**  
 
 
